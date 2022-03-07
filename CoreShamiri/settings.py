@@ -39,8 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'phonenumber_field',
+    'django_filters',
     'CoreTherapy',
-    'CoreTherapy.user'
+    'CoreTherapy.user',
+    'CoreTherapy.MentalState',
+    'CoreTherapy.TherapyCenter',
     
 ]
 
