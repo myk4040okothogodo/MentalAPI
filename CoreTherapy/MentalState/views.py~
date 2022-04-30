@@ -1,11 +1,10 @@
 from django.shortcuts import render
 from rest_framework import authentication, permissions, viewsets, filters
 from django_filters.rest_framework import DjangoFilterBackend
-
-from django_filters.rest_framework import DjangoFilterBackend
-from oauth2_provider.contrib.rest_framework import TokenHasReadWriteScope, TokenHasScope
 from .models import mentalState
 from .serializer import mentalStateSerializer
+from django_filters.rest_framework import DjangoFilterBackend
+from oauth2_provider.contrib.rest_framework import TokenHasReadWriteScope, TokenHasScope
 
 
 class DefaultsMixin(object):

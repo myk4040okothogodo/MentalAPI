@@ -13,8 +13,8 @@ class UserSerializer(serializers.ModelSerializer):
     links = serializers.SerializerMethodField('get_links')
     class Meta:
         model = User
-        fields = ['id', 'User.USERNAME_FIELD','phone', 'email', 'is_active', 'created', 'links']
-        read_only_field = ['is_active', 'created', 'updated','phone']
+        fields = ['id', User.USERNAME_FIELD,'phone', 'email', 'is_active', 'is_staff', 'links']
+        read_only_field = ['is_active','phone','email']
 
     def get_links(self, obj):
         request = self.context['request']

@@ -22,12 +22,12 @@ class therapycenterSerializer(serializers.ModelSerializer):
                 'candidates': None,
                 'therapists': None
                 }
-        if obj.candidates_id:
+        if obj.candidates:
             links['candidates'] = reverse('user-detail',
                 kwargs = {User.USERNAME_FIELD: obj.candidates}, request=request
                     )
-        if obj.therapists_id:
+        if obj.therapists:
             links['therapists'] = reverse('user-detail',
-                kwargs = {User.USERNAME_FIELD: obj.therspists}, request=request
+                kwargs = {User.USERNAME_FIELD: obj.therapists}, request=request
                     )
         return links    

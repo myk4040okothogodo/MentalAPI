@@ -22,5 +22,8 @@ from rest_framework.authtoken.views import obtain_auth_token
 from CoreTherapy.urls  import router
 
 urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+    url(r'^api/token/', obtain_auth_token, name="api-token"),
     url(r'^api/', include(router.urls)),
+    url(r'^0/', include('oauth2_provider.urls', namespace="oauth2_provider")),
 ]

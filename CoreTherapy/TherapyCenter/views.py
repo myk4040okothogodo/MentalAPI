@@ -4,18 +4,20 @@ from django_filters.rest_framework import DjangoFilterBackend
 from .models import therapycenter
 from .serializer import therapycenterSerializer
 
+from oauth2_provider.contrib.rest_framework import TokenHasReadWriteScope, TokenHasScope
 
 
 class DefaultsMixin(object):
     """Default settings for view authentication, permissions,
     filtering and pagination."""
-    #authentication_classes = (
-    #    authentication.BasicAuthentication,
-    #    authentication.TokenAuthentication,
-    #)
-    #permission_classes = (
-    #   permissions.IsAuthenticated,
-    #)
+    authentication_classes = (
+        authentication.BasicAuthentication,
+        authentication.TokenAuthentication,
+    )    
+    permission_classes = (
+       permissions.IsAuthenticated,
+       #TokenHasReadWriteScope
+       )
     paginate_by = 25
     paginate_by_param = 'page_size'
     max_paginate_by = 100
