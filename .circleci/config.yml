@@ -1,0 +1,25 @@
+version: 2.1
+
+jobs:
+  test-and-lint:
+    docker:
+      - image: cimg/python:3.10.1
+      - image: cimg/postgres:14.1
+        environment:
+          POSTGRES_USER: example
+    steps:
+      - checkout
+      - run:
+          name: install dependencies
+          command: pip install -r requirements.txt
+      - run:
+          name: lint
+          command: pylint CoreShamiri/  CoreTherapy/
+      - run:
+          name: run tests
+          command: python manage.py test
+
+workflows:
+  build-and-test-workflow:
+    jobs:
+      - test-and-lint

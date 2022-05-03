@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'oauth2_provider',
     'rest_framework',
+    'rest_framework.authtoken',
     'phonenumber_field',
     'django_filters',
     'CoreTherapy',

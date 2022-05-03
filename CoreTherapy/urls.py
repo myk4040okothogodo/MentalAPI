@@ -6,6 +6,6 @@ from .user.views import UserViewSet
 
 router = DefaultRouter()
 
-router.register(r'mentalhealthcarecenters', therapycenterViewSet)
-router.register(r'mentalstate', MentalStateViewSet)
-router.register(r'users', UserViewSet)
+router.register(r'mentalhealthcarecenters', therapycenterViewSet, basename='mentalhealthcarecennters')
+router.register(r'mentalstate', MentalStateViewSet, basename='mentalstate')
+router.register(r'users', UserViewSet, basename= 'users')
